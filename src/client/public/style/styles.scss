@@ -1,0 +1,161 @@
+@use "sass:color";
+@use "./breakpoints";
+
+$primary-color: #28a745;
+$secondary-color: #17a2b8;
+$background-color: #f0f4f8;
+$card-background: #ffffff;
+$text-color: #212529;
+$header-font: "Roboto", sans-serif;
+$body-font: "Roboto", sans-serif;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $body-font;
+  background-color: $background-color;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+}
+
+.full-height-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.main-container {
+  max-width: 800px; // Increased width
+  width: 100%;
+  background-color: $card-background;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  &:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .app-header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+
+    .title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: $primary-color;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: $secondary-color;
+    }
+  }
+
+  .form-section {
+    width: 100%;
+    max-width: 500px;
+
+    .travel-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .input-group {
+        .input-group-text {
+          background-color: $primary-color;
+          color: #fff;
+          border: none;
+          border-radius: 5px 0 0 5px;
+        }
+
+        input {
+          border-radius: 0 5px 5px 0;
+          border: 1px solid color.scale($primary-color, $lightness: 30%);
+          padding: 0.75rem;
+        }
+      }
+
+      #trip-date {
+        border-radius: 5px;
+        border: 1px solid color.scale($primary-color, $lightness: 30%);
+        padding: 0.75rem;
+      }
+
+      .btn-success {
+        margin-top: 1rem;
+        background-color: $primary-color;
+        border: none;
+        padding: 0.75rem;
+        border-radius: 5px;
+        width: 100%;
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color: color.scale($primary-color, $lightness: -10%);
+        }
+      }
+    }
+
+    .error-message {
+      color: color.scale($primary-color, $lightness: -20%);
+      font-size: 0.9rem;
+    }
+  }
+
+  .trip-details-wrapper {
+    margin-top: 2rem;
+    background-color: #f7f9fc;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    width: 100%; // Takes full width of main container
+    height: auto; // Adjusts to content height automatically
+
+    .trip-details {
+      text-align: center;
+
+      #remaining-days {
+        font-size: 1.5rem; // Adjust font size for a clearer view
+        font-weight: 600;
+        color: $primary-color;
+        margin-bottom: 1rem;
+      }
+
+      .flight_data {
+        font-size: 1.1rem; // Slightly increase font size
+        color: $text-color;
+        margin-bottom: 1rem;
+
+        h2 {
+          font-size: 1.3rem;
+          font-weight: 600;
+          color: $secondary-color;
+        }
+
+        p {
+          margin: 0.75rem 0; // Increase spacing between paragraphs
+        }
+      }
+
+      .location-image {
+        margin-top: 1rem;
+
+        img {
+          width: 100%;
+          max-width: 100%;
+          height: auto; // Adjusts to fit the container without limiting height
+          object-fit: cover;
+          border-radius: 10px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}
