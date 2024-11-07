@@ -1,5 +1,7 @@
 # Weather Web App
 
+![Weather Web App Screenshot](src/client/public/assets/Weather-web-app-pic.png)
+
 This project enables users to plan trips by providing real-time weather information and images for their chosen destinations. With a simple and user-friendly interface, users can enter a destination and travel date to receive weather data, a countdown to the trip, and an image of the location.
 
 ## Project Overview
